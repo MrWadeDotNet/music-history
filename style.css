@@ -20,27 +20,29 @@ header {
 .left_container{
 background-color: #4DD7FA;
 border: solid 2px;
-width: 150px;
+width: 165px;
 height: 320px;
 padding:10px;
 float: left;
-text-align:left;
+text-align: left;
 
 
 }
 
-
 .left_align {
-width: 70px;
-text-align: left;
+width: 45%;
 float: left;
 }
 
 .right_align {
-width: 70px;
+width: 50%;
 float: right;
 }
 
+.clear
+{
+	clear: both;
+}
 .right_container { 
 background-color: #FEFAC0;
 border: solid 2px;
