@@ -11,7 +11,9 @@
 
 // {Song name} by {Artist} on the album {Album}
 
+// .right_container will contain list of songs. 
 
+/*
 var songs = [];
 
 songs[songs.length] = "Legs > by Z*ZTop on the album Eliminator";
@@ -33,7 +35,42 @@ var cleanSongTwo = cleanSongOne.replace(/\*|!|@|\(|/g, "");
 
 contentElement.innerHTML += "<br>" + cleanSongTwo;
 
- 
+}
+*/
+
+var musicList;
+var album;
+var artist;
+var song;
+
+$(document).ready(function() {
+
+    $.ajax({
+        url: "music.json"
+        }).done(function(music) {
+       
+
+ musicList = music; 
+
+   // console.log(musicList.music[0]);
+    
+    console.log(musicList.music.length); 
+
+   for(var i = 0; i < musicList.music.length; i++){   
+   
+    var listMusic;
 
 
-} 
+    var output = $(".right_container");
+    listMusic = musicList.music[i].album;
+
+    output.html(listMusic);        
+
+    }
+
+   
+  //       var output = $(".right_container");
+    });
+
+
+}); 
