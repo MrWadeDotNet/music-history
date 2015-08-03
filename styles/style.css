@@ -1,6 +1,8 @@
 
-#wrapper {
+.wrapper {
   width: 800px;
+  display: flex;
+  flex-flow: row wrap;
 }
 
 header {
@@ -46,10 +48,8 @@ float: right;
 .right_container { 
 background-color: #FEFAC0;
 border: solid 2px;
-height: 300px;
 margin: 0 0 0 200px;
 text-align: left;
 padding: 20px;
-  
-}
+flex-grow: 1;}
 
