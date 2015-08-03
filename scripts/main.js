@@ -19,11 +19,11 @@ requirejs(
 */
 
 requirejs(
-        ["javascripts/populate-songs.js","javascripts/dom-access.js"],
+        ["scripts/populate-songs.js","scripts/dom-access.js"],
         function(popSongs, domAccess) {
 
               $.ajax({
-                  url: "http://localhost/workspace/music-history-5/javascripts/music.json"
+                  url: "scripts/music.json"
               }).done(function(data) {
                 var html = populateSongs(data.songs);
                 addSongsToTable(html);
