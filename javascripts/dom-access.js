@@ -4,4 +4,3 @@ function addSongsToTable(songHTML) {
   $(".song_container").append(songHTML);
 }
  });
- 

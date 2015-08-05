@@ -1,29 +1,27 @@
 // Instead of AJAX should be a call back function in populate-songs.js
 //
-/*
 
 
-requirejs(
-  [“dom-access", "populate-songs", "get-more-songs"],
-  function(domAccess, pop, get_more) {
 
-    pop.querySongs(function(data) {
-      console.log("data", data);
-    });
-    get_more.querySongs(function(data) {
-      console.log("data", data);
-    });
+requirejs.config({
+  baseUrl: './javascripts',
+  paths: {
+    'jquery': '../bower_components/jquery/dist/jquery.min',
+    'hbs': '../bower_components/require-handlebars-plugin/hbs',
+    'bootstrap': '../bower_components/bootstrap/dist/js/bootstrap.min'
+  },
+  shim: {
+    'bootstrap': ['jquery']
   }
-);
+});
 
-*/
 
 requirejs(
-        ["scripts/populate-songs.js","scripts/dom-access.js"],
+        ["jquery","hbs","populate-songs","dom-access"],
         function(popSongs, domAccess) {
 
               $.ajax({
-                  url: "scripts/music.json"
+                  url: "javascripts/music.json"
               }).done(function(data) {
                 var html = populateSongs(data.songs);
                 addSongsToTable(html);
