@@ -1,13 +1,14 @@
-
+/*s
 
 define(function() {
   return {
     querySongs: function(callback) {
       $.ajax({
-      url: "./javascripts/songs-2.json"
+      url: "https://radiant-heat-7929.firebaseio.com/.json"
       }).done(function(data) {
         callback.call(this, data.songs);
       });
     }
   };
 });
+*/

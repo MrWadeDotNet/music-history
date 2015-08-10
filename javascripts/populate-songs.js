@@ -1,11 +1,12 @@
-define(function() {
+ define(function() {
   return {
     querySongs: function(callback) {
       $.ajax({
-      url: "./javascripts/music.json"
-      }).done(function(data) {
-        callback.call(this, data);
+      url: "https://radiant-heat-7929.firebaseio.com/.json"
+    }).done(function(data) {
+       callback.call(this, data);
       });
     }
   };
 });
+  
