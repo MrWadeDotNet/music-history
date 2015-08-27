@@ -1,0 +1,15 @@
+ <section>  
+  <div class="col-md-4 col-md-offset-2 border">
+    <div class="song_container">
+  <div>
+      <div ng-repeat="song in songs | filter:searchSongs">
+      <h1>{{song.name}}</h1>
+      <h4>Performed by {{song.artist}}</h4>
+      <h4>on the album {{song.album}}</h4>
+      <div><button ng-click="killSong(song)">Remove</button></div>
+      </div>
+    </div>
+  </div>
+    </div>
+</div>
+</section>

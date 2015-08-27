@@ -4,40 +4,20 @@
 
   <head>
     <meta charset="utf-8">
-    <title>Nashville Software School</title>
+    <title>Music Application</title>
     <link rel="stylesheet" href="styles/slider.css">
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="lib/bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles/style.css">
   </head>
-  <body>
+  <body ng-app="MusicApp">
 
-    <!--
-<nav class="navbar navbar-fixed-top topnav">
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-md-1 col-md-offset-10">
-      <ul class"navbar-nav">
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profile<span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-          </ul>
-        </ul>
-    </div>
-    <div class="col-md-1 col-md-offset-8"><h4><a class="topelements" href="#">Profile</a></h4>
-    </div>
-    <div class="col-md-1">
-    </div>
-  </div>
-</div>
-</nav> -->
 <!-- Navigation -->
 <nav class="topnav topelements navbar-fixed-top">
   <div class="row">
     <div class="col-md-1">Home</div>
-    <div class='col-md-1' data-toggle="modal" data-target="#myModal" id="#myBtn"><a href="#">Add Music</a></div>
+    <div class='col-md-1' data-toggle="modal" data-target="#myModal" id="#myBtn">
+    <a href="#">Add Music</a>
+    </div>
   </div>
 </nav>
 
@@ -49,15 +29,9 @@
           <div class="form-group">
             <h4>Artist</h4>
             <select id="artist" name="artist">
-              <option>Random</option>
-              <option>Random 2</option>
-              <option>Random 3</option>
             </select>
             <h4>Album</h4>
             <select id="album" name="album">
-              <option>Random Album</option>
-              <option>Random Album 2</option>
-              <option>Random Album 3</option>
             </select>
           </div>
         </form>
@@ -66,14 +40,25 @@
           <h4>Genre</h4>
         </div>
       </div>
-
+      <section ng-view>
 <!--- Music List Begin -->
+ <!-- <section ng-controller="SongCtrl">  
   <div class="col-md-4 col-md-offset-2 border">
     <div class="song_container">
+  <div>
+      <div ng-repeat="song in songs | filter:searchSongs">
+      <h1>{{song.name}}</h1>
+      <h4>Performed by {{song.artist}}</h4>
+      <h4>on the album {{song.album}}</h4>
+      <div><button ng-click="killSong(song)">Remove</button></div>
+      </div>
+    </div>
   </div>
     </div>
 </div>
+</section> -->
 <!--- Music List End -->
+</section>
       <!-- Remove Button for real-time responsiveness  <button type="submit" class="btn btn-default">Filter</button> -->
 <!-- Modal -->
 
@@ -94,7 +79,7 @@
             <span class="input-group-addon">Song Name:</span>
           </div>
             <div class="col-md-4">
-              <input type="text" id="inputTitle" class="form-control">
+              <input type="text" id="inputTitle" class="form-control" ng-model="newSong">
             </div>
           </div>
           <div class="row">
@@ -102,7 +87,7 @@
             <span class="input-group-addon">Album:</span>
           </div>
             <div class="col-md-4">
-              <input type="text" id="inputAlbum" class="form-control">
+              <input type="text" id="inputAlbum" class="form-control" ng-model="newAlbum">
             </div>
           </div>
           <div class="row">
@@ -110,10 +95,10 @@
             <span class="input-group-addon">Artist: </span>
           </div>
             <div class="col-md-4">
-              <input type="text" id="inputArtist" class="form-control">
+              <input type="text" id="inputArtist" class="form-control" ng-model="newArtist">
             </div>
           </div>
-          <div class="row">
+         <div class="row">
             <div class="col-md-2 col-offset-2">
             <span class="input-group-addon">Genre: </span>
           </div>
@@ -124,7 +109,7 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-success" data-dismiss="modal" id="submitsongs">Add</button>
+        <button type="button" class="btn btn-success" data-dismiss="modal" id="submitsongs" ng-click="addSong()">Add</button>
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </form>
         </div>
@@ -150,13 +135,16 @@
 </div>
 </div>
 
-*
 
+  <script src="lib/bower_components/angular/angular.min.js"></script>
+  <script src="lib/bower_components/angular-route/angular-route.js"></script>
+  <script src="lib/bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="app/apps.js"></script>
+  <script src="app/controllers/songctrl.js"></script>
+  <script src="app/factories/simple_storage.js"></script>
+  <script src="app/factories/get-songs.js"></script>
 
 </nav>
-   <!-- <script src="bower_components/jquery/dist/jquery.min.js"></script>
-  <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>-->
-  <script data-main="javascripts/main" src="bower_components/requirejs/require.js"></script>
-    <!-- // <script src="javascripts/main.js" type="text/javascript"></script> -->
 </body>
 </html>
+  

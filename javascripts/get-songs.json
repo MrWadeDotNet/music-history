@@ -14,16 +14,6 @@
             "album": "The Wall",
             "artist": "Pink Floyd",
             "title": "Another brick in the wall"
-        },
-        {
-        "album": "Appetite for Destruction",
-        "artist": "Guns & Roses",
-        "title": "Welcome to the Jungle"
-        },
-        {
-        "album": "Jagged Little Pill",
-        "artist": "Alanis Morsette",
-        "title": "Ironic"
         }
     ]
 }
