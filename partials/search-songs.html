@@ -6,7 +6,7 @@
         <input type="text" ng-model="songSearchText.name" />
     </div>
 
-    <div ng-repeat="song insongs | filter: songSearchText">
+    <div ng-repeat="song in songs | filter: songSearchText">
         <a href="#/songs/{{song.id }} "> {{ song.name }} </a>
     </div>
 
