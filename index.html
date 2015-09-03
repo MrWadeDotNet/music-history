@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="lib/bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles/style.css">
   </head>
-  <body ng-app="MusicApp">
+  <body id="MusicApp">
 
 <!-- Navigation -->
 <nav class="topnav topelements navbar-fixed-top">
@@ -135,7 +135,8 @@
 </div>
 </div>
 
-
+ <script data-main="app/main" src="lib/bower_components/requirejs/require.js"> </script>
+<!--
   <script src="lib/bower_components/angular/angular.min.js"></script>
   <script src="lib/bower_components/angular-route/angular-route.js"></script>
   <script src="lib/bower_components/jquery/dist/jquery.min.js"></script>
@@ -146,6 +147,7 @@
   <script src="app/controllers/songctrl.js"></script>
   <script src="app/factories/simple_storage.js"></script>
   <script src="app/directives/song-directive.js"></script>
+  -->
 </nav>
 </body>
 </html>

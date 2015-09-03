@@ -1,6 +1,32 @@
-var app = angular.module("MusicApp", ['ngRoute','firebase']);
+
+define(['angular'],function(angular){
 
 
+var app = angular.module("MusicApp", ['angular','ngRoute']);
+
+console.log(app);
+
+
+function config($routeProvider) {
+        $routeProvider.when('/', {
+          templateUrl: 'partials/song-list.html',
+          controller: 'SongCtrl'
+        });
+    }
+
+    config.$inject=['$routeProvider'];
+
+    return config;
+
+
+
+});
+
+
+
+
+
+/*
 
 app.config(['$routeProvider',
   function($routeProvider) {
@@ -12,13 +38,15 @@ app.config(['$routeProvider',
         otherwise({
         redirectTo: '/'
       });
-    /*  when('/songs/new', {
+      when('/songs/new', {
         templateUrl: 'partials/song-form.html',
         controller: 'SongFormCtrl'
       }).
       when('/songs/:songId', {
         templateUrl: 'partials/song-detail.html',
         controller: 'SongDetailCtrl'
-      }). */
+      }). 
 
   }]);
+
+});*/
